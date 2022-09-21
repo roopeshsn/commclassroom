@@ -52,19 +52,11 @@ const Courses = () => {
           <div className="font-bold text-xl mt-24 leading-10 text-third">
             {course.map((course) => (
               <ul key={course.key} onClick={() => setValue(course.key)}>
-                <span
-                  className={`${
-                    course.key === value && 'text-secondary'
-                  } cursor-pointer`}
-                >
+                <span className={`${course.key === value && 'text-secondary'}`}>
                   0{course.key + 1}
                 </span>
                 &emsp;
-                <span
-                  className={`${
-                    course.key === value && 'text-primary'
-                  } cursor-pointer`}
-                >
+                <span className={`${course.key === value && 'text-primary'}`}>
                   {course.title}
                 </span>
               </ul>
@@ -109,7 +101,7 @@ const Courses = () => {
         {/* prev next buttons */}
         <div className="flex flex-1 transform scale-150 z-50 filter drop-shadow-xl">
           <div
-            className="ml-24 cursor-pointer"
+            className="ml-24 "
             onClick={() => {
               value === 0 ? setValue(course.length - 1) : setValue(value - 1);
             }}
@@ -117,7 +109,6 @@ const Courses = () => {
             <img src={prevButton} />
           </div>
           <div
-            className="cursor-pointer"
             onClick={() => {
               value === course.length - 1 ? setValue(0) : setValue(value + 1);
             }}
